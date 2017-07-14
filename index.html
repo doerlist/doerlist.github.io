@@ -150,8 +150,9 @@
             <div class="left"><a href="#" class="link toggle-sortable icon-only">Edit</a></div>
             <div class="center sliding">★ Doerlist</div>
             <div class="right">
-              <a href="#" data-panel="left" class="open-panel link icon-only">
-              <i class="icon icon-bars"></i></a></div>
+              <a href="#" data-panel="left" class="open-panel link icon-only"> 
+               <i class="icon icon-bars"></i></a> 
+            </div>
           </div>
         </div>
         
@@ -171,7 +172,7 @@
 
 
               <div class="content-block-title">All your tasks</div>
-              <div class="list-block sortable sortable-opened">
+              <div class="list-block sortable">
                 <ul>
 
                   <li class="swipeout transitioning"><a href="accordion.html" class="item-link"> 
@@ -397,6 +398,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
     
     <script>
+
+      var myApp = new Framework7();      
+      var $$ = Dom7;
+
+      $$('.toggle-sortable').on('click', function () {
+        if ($(this).text() == "Done")
+          $(this).text("Edit")
+        else
+          $(this).text("Done");
+        myApp.sortableToggle('.sortable');
+      });
+
+
       function blinking(){
         // each time blink it
       }
