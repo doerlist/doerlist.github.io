@@ -392,10 +392,15 @@
         document.getElementById('day').innerText = "Happy " + now.format("dddd, MMMM Do")
       }
 
+      function update_date_time(){
+        set_day()
+        time()
+      }
+
       function everything(){
         set_day()
         time()
-        setInterval(time, 1000)
+        setInterval(update_date_time, 1000)
       }
 
       window.onload = everything;
