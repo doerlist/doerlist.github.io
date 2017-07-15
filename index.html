@@ -6,6 +6,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
     <title>Doerlist</title>
 
     <link rel="stylesheet" href="build/css/framework7.ios.css">
@@ -30,6 +31,7 @@
     <div class="panel panel-left panel-cover layout-dark">
       <div class="content-block-title"></div>
       <div class="content-block">
+        Welcome, ytbryan@gmail.com
       </div>
 
       <div class="content-block-title">Settings</div>
@@ -59,28 +61,18 @@
                 </div>
            </div></a></li>
 
-
-          <!-- <li>
-            <label class="label-checkbox item-content">
-              <input type="checkbox" name="ks-checkbox" value="Books" checked="checked">
-              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-
-              <div class="item-inner">
-              <div class="item-title">Left-handed</div>
-              </div>
-            </label>
-          </li> -->
-
-          
-
-
         </ul>
       </div>
       
       <div class="content-block">
         <p>
-          Doerlist is made possible with the following 
-          open source softwares <a class="close-panel" href="opensource.html">found here.</a>
+          <b>Doerlist</b> is made possible because of these 
+          open source softwares & beta testers <a class="close-panel" href="opensource.html"> here.</a>
+        </p>
+
+        <p>
+          For bug report, feedback and security matters, please send an email to
+          ytbryan@gmail.com. You can also reach me at twitter <a href="http://www.twitter.com/ytbryan">@ytbryan</a> (Please use email for security issue.) 
         </p>
       </div>
       
@@ -382,7 +374,12 @@
 
       function set_day(){
         var now = new moment();
-        document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
+        if(now.format("dddd") == "saturday" || "sunday")
+          document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
+        else if(now.format("dddd") == "friday")
+          document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
+        else 
+          document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
       }
 
       function update_date_time(){
