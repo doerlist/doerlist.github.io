@@ -29,7 +29,7 @@
             <div class="item-content">
               <div class="item-media"><i class="icon f7-icons">email</i></div>
               <div class="item-inner"> 
-                <div class="item-title label">Share</div>
+                <div class="item-title label">Assign</div>
                 <div class="item-input">
                   <input type="email" placeholder="E-mail"/>
                 </div>
@@ -51,22 +51,35 @@
 
           <li>
             <div class="item-content">
-              <div class="item-media"><i class="icon f7-icons">check</i></div>
-              <div class="item-inner"> 
-                <div class="item-title label">Marked</div>
+              <div class="item-media"><i class="icon f7-icons">persons</i></div>
+                <div class="item-inner">
+                <div class="item-title label">Priority</div>
                 <div class="item-input">
-                  <label class="label-switch">
-                    <input type="checkbox"/>
-                    <div class="checkbox"></div>
-                  </label>
+                <select class="">
+                  <option>nil</option>
+                  <option>!</option>
+                  <option>!!</option>
+                  <option>!!!</option>
+                  <option>!!!!</option>
+                </select>
                 </div>
               </div>
             </div>
           </li>
 
           <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" name="ks-checkbox" value="" checked="checked">
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+              <div class="item-title">Mark as completed </div>
+              </div>
+            </label>
+          </li> 
+
+          <li>
             <div class="item-content">
-              <div class="item-media"><i class="icon f7-icons">check</i></div>
+              <div class="item-media"><i class="fa fa-lg fa-link"></i></div>
               <div class="item-inner"> 
                 <div class="item-title label">Generate a public link</div>
                 <div class="item-input">
@@ -89,6 +102,21 @@
               <div class="item-inner"> 
                 <div class="item-input">
                   Delete this task
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+
+      <div class="content-block-title">Archive this task</div>
+
+       <ul>
+          <li class="align-top">
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-input">
+                  Archive this task
                 </div>
               </div>
             </div>

@@ -50,13 +50,6 @@
                   <div class="item-title">Account</div>
                 </div>
               </div></a></li>
-          <li><a href="notification.html" class="item-link close-panel"> 
-              <div class="item-content">
-                <div class="item-media"><i class="fa fa-lg fa-flag"></i></div>
-                <div class="item-inner"> 
-                  <div class="item-title">Notification</div>
-                </div>
-              </div></a></li>
 
           <li><a href="buy.html" class="item-link close-panel"> 
               <div class="item-content">
@@ -177,7 +170,7 @@
 
                   <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
                       <div class="item-content swipeout-content">
-                        <div class="item-media"><i class="fa fa-lg fa-check-circle-o"></i></div>
+                        <div class="item-media"><i class="fa fa-lg fa-check-square-o"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Praise God today</div>
                         </div>
@@ -193,9 +186,9 @@
 
                     <li class="swipeout transitioning"><a href="show_project.html" class="item-link"> 
                       <div class="item-content swipeout-content">
-                        <div class="item-media"><i class="fa fa-lg fa-list"></i></div>
+                        <div class="item-media"><i class="fa fa-lg fa-list-alt"></i></div>
                         <div class="item-inner"> 
-                          <div class="item-title">Helping Yao Xing</div>
+                          <div class="item-title">PEV Evaluation Recording</div>
                           <div class="item-after"><span class="badge bg-green">10</span></div>
                         </div>
                       </div></a>
@@ -210,7 +203,7 @@
 
                     <li class="swipeout transitioning"><a href="show_project.html" class="item-link"> 
                       <div class="item-content swipeout-content">
-                        <div class="item-media"><i class="fa fa-lg fa-list"></i></div>
+                        <div class="item-media"><i class="fa fa-lg fa-list-alt"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Helping Angela</div>
                           <div class="item-after"><span class="badge bg-green">10</span></div>
@@ -227,7 +220,7 @@
 
                    <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
                       <div class="item-content swipeout-content">
-                        <div class="item-media"><i class="fa fa-lg fa-check-circle-o"></i></div>
+                        <div class="item-media"><i class="fa fa-lg fa-check-square-o"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Remind them there's no Gems this saturday</div>
                         </div>
@@ -241,7 +234,7 @@
 
                     <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
                       <div class="item-content swipeout-content">
-                        <div class="item-media"><i class="fa fa-lg fa-check-circle-o"></i></div>
+                        <div class="item-media"><i class="fa fa-lg fa-check-square-o"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Well</div>
                         </div>
@@ -389,7 +382,7 @@
 
       function set_day(){
         var now = new moment();
-        document.getElementById('day').innerText = "Happy " + now.format("dddd, MMMM Do")
+        document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
       }
 
       function update_date_time(){
@@ -400,7 +393,7 @@
       function everything(){
         set_day()
         time()
-        setInterval(update_date_time, 1000)
+        setInterval(update_date_time, 5000)
       }
 
       window.onload = everything;
