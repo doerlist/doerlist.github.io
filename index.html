@@ -142,7 +142,7 @@
           <div class="toolbar-inner">
              <a href="#" data-panel="left" class="open-panel link icon-only"> 
                <i class="icon icon-bars"></i></a> 
-            <a href="create.html" data-popover="" class="link">New Task</a></div>
+            <a id="create_task" href="create.html" data-popover="" class="link">New Task</a></div>
         </div>
 
         <div class="pages navbar-through toolbar-through">
@@ -366,7 +366,7 @@
       function blinking(){
         // each time blink it
       }
-
+      
       function time() {
         var now = new moment();
         document.getElementById('time').innerText = now.format("hh:mm A");
