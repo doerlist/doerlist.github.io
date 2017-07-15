@@ -163,7 +163,9 @@
         <div class="pages navbar-through toolbar-through">
           <div data-page="index" class="page">
             <div class="page-content">
-              <div class="content-block-title text-center"><span id="day"></span></div>
+              <div class="content-block-title text-center">
+                <span id="day"></span>
+              </div>
               <div class="content-block text-center">
                   <h1><span id="time"></span></h1>
             </div>
@@ -382,9 +384,7 @@
 
       function time() {
         var now = new moment();
-        // if document.getElementById('time') != undefined {
-          document.getElementById('time').innerText = now.format("hh:mm A");
-        // }
+        document.getElementById('time').innerText = now.format("hh:mm A");
       }
 
       function set_day(){
@@ -393,8 +393,8 @@
       }
 
       function everything(){
-        time()
         set_day()
+        time()
         setInterval(time, 1000)
       }
 
