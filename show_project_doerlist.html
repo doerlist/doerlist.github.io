@@ -16,7 +16,7 @@
       </div>
 
       <div class="list-block sortable">
-        <ol>
+        <ul>
           <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
               <div class="item-content swipeout-content">
                 <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
@@ -193,16 +193,16 @@
               <a href="#" class="bg-green swipeout-delete" 
               style="left: 0px;">Complete</a></div>
             <div class="sortable-handler"></div>
-
           </li>
 
-
-
-                    <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
+          <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
             <div class="item-content swipeout-content">
               <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
               <div class="item-inner"> 
                 <div class="item-title">Everyone take a look at how Ninebot that we are reviewing stands against other unicycles in the market.</div>
+                <div class="item-after">
+                  <span class="small">Friday</span>
+                </div>
               </div>
             </div></a>
                                   
@@ -216,7 +216,7 @@
           </li>
 
 
-                    <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
+          <li class="swipeout transitioning"><a href="show.html" class="item-link"> 
             <div class="item-content swipeout-content">
               <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
               <div class="item-inner"> 
@@ -233,12 +233,49 @@
 
           </li>
           
-        </ol>
+        </ul>
 
 
        <div class="content-block-title">Action</div> 
 
-       <ul>
+       <div class="list-block inset">
+        <ul>
+          <li class="item-link">
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-input">
+                  <i class="fa fa-1x fa-check"></i> Mark as completed
+                </div>
+              </div>
+            </div>
+          </li>
+
+           <li class="item-link">
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-input">
+                  <i class="fa fa-1x fa-archive"></i> Archive this task
+                </div>
+              </div>
+            </div>
+          </li>
+
+
+          <li class="item-link">
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-input">
+                  More actions
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+       </div>
+        
+       <!-- <ul>
           <li class="align-top">
             <div class="item-content">
               <div class="item-inner"> 
@@ -268,15 +305,13 @@
                   <p class="row">
                     <span class="">
                       <a href="#" class="button demo-actions">Action Sheet</a></span>
-                      <!-- <span class="col-50"><a href="#" data-popup=".demo-popup" class="button open-popup">Popup</a>
-                    </span> -->
                   </p>
 
                 </div>
               </div>
             </div>
           </li>
-        </ul>
+        </ul> -->
 
 
       <!-- <div class="content-block-title">Archive this list</div> -->
@@ -298,16 +333,3 @@
     </div>
   </div>
 </div>
-
-<script>
-
-  var myApp = new Framework7();      
-  var $$ = Dom7;
-
-  function loader() {
-    $('#create_task').innerText = "Add Task"
-  }
-
-  window.onload = loader
-
-</script>
