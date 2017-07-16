@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, 
+    minimum-scale=1, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -57,13 +58,13 @@
       <div class="content-block-title">Settings</div>
       <div class="list-block">
         <ul>
-          <li><a href="index.html" class="item-link close-panel"> 
+          <!-- <li><a href="index.html" class="item-link close-panel"> 
             <div class="item-content">
               <div class="item-media"><i class="fa fa-1x fa-home"></i></div>
               <div class="item-inner"> 
                 <div class="item-title">Home</div>
               </div>
-            </div></a></li>
+            </div></a></li> -->
 
           <li><a href="account.html" class="item-link close-panel"> 
               <div class="item-content">
@@ -220,11 +221,11 @@
                     </li>
 
 
-                    <li class="swipeout transitioning"><a href="show_project.html" class="item-link"> 
+                    <li class="swipeout transitioning"><a href="show_project_doerlist.html" class="item-link"> 
                       <div class="item-content swipeout-content">
                         <div class="item-media"><i class="fa fa-1x fa-list-alt"></i></div>
                         <div class="item-inner"> 
-                          <div class="item-title">Helping Angela</div>
+                          <div class="item-title">Doerlist todos</div>
                           <div class="item-after">                            
                             <span class="small">Sunday</span>
                           </div>
@@ -435,6 +436,56 @@
         time()
         setInterval(update_date_time, 5000)
       }
+
+
+      // $$('#create_task').on('click', function () {
+      //   var buttons = [
+      //       {
+      //           text: 'Delete this task',
+      //           onClick: function () {
+      //               myApp.alert('Button4 clicked');
+      //           }
+
+      //       },
+      //       {
+      //           text: 'Copy public link',
+      //           onClick: function () {
+      //               myApp.alert('Button4 clicked');
+      //           }
+                
+      //       },
+      //       {
+      //           text: 'Cancel',
+      //           color: 'red'
+      //       },
+      //   ];
+      //   myApp.actions(buttons);
+      // });
+
+
+            $$('#create_task').on('click', function () {
+        var buttons = [
+            {
+                text: 'Delete this list',
+                onClick: function () {
+                    myApp.alert('Button4 clicked');
+                }
+
+            },
+            {
+                text: 'Copy public link',
+                onClick: function () {
+                    myApp.alert('Button4 clicked');
+                }
+                
+            },
+            {
+                text: 'Cancel',
+                color: 'red'
+            },
+        ];
+        myApp.actions(buttons);
+      });
 
       window.onload = everything;
     </script>
