@@ -19,8 +19,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <style>
-
-      
+      .list-block .item-title.label {
+        width: 15%;
+      }
+      .list-block .swipeout-actions-left a, .list-block .swipeout-actions-right a {
+        padding: 15px;
+      }
 
       .item-media .framework7-icons, .item-media .f7-icons {
         font-size: 22px;
@@ -153,9 +157,6 @@
           <div class="navbar-inner">
             <div class="left"></div>
             <div class="center sliding">★ Doerlist</div>
-            <!-- <div class="right">
-             <a href="#" class="link toggle-sortable icon-only">Edit</a>
-            </div> -->
           </div>
         </div>
         
@@ -198,10 +199,15 @@
                       </div></a>
                                             
                       <div class="swipeout-actions-right">
-                        <a href="#" class="demo-actions" style="left: 0px;">More</a>
-                        <a href="#" class="bg-blue demo-actions" style="left: 0px;">Archive</a>
+                        <a href="#" class="demo-actions" style="left: 0px;">
+                          <span class="small">More</span>
+                        </a>
+                        <a href="#" class="bg-blue demo-actions" style="left: 0px;">
+                          <span class="small">Archive</span></a>
                         <a href="#" class="bg-green swipeout-delete" 
-                        style="left: 0px;">Complete</a></div>
+                        style="left: 0px;">
+                        <span class="small">Complete</span>
+                      </a></div>
                       <div class="sortable-handler"></div>
                     </li>
 
