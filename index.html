@@ -26,6 +26,10 @@
         white-space: normal;
       }
 
+      .small {
+        font-size:14px;
+      }
+
     </style>
   </head>
 
@@ -137,9 +141,9 @@
           <div class="navbar-inner">
             <div class="left"></div>
             <div class="center sliding">★ Doerlist</div>
-            <div class="right">
+            <!-- <div class="right">
              <a href="#" class="link toggle-sortable icon-only">Edit</a>
-            </div>
+            </div> -->
           </div>
         </div>
         
@@ -170,6 +174,9 @@
                         <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Praise God today</div>
+                          <div class="item-after">                            
+                            <span class="small">9:20am</span>
+                          </div>
                         </div>
                       </div></a>
                                             
@@ -187,7 +194,9 @@
                         <div class="item-media"><i class="fa fa-1x fa-list-alt"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">PEV Evaluation Recording</div>
-                          <div class="item-after"><span class="badge bg-black">10</span></div>
+                          <div class="item-after">                            
+                            <span class="small">Friday</span>
+                          </div>
                         </div>
                       </div></a>
                       
@@ -205,7 +214,9 @@
                         <div class="item-media"><i class="fa fa-1x fa-list-alt"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Helping Angela</div>
-                          <div class="item-after"><span class="badge bg-black">10</span></div>
+                          <div class="item-after">                            
+                            <span class="small">Sunday</span>
+                          </div>
                         </div>
                       </div></a>
 
@@ -223,6 +234,10 @@
                         <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Remind them there's no Gems this saturday</div>
+                          <div class="item-after">
+                            
+                            <span class="small">Friday</span>
+                          </div>
                         </div>
                       </div></a>
                       <div class="swipeout-actions-right">
@@ -238,7 +253,11 @@
                         <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Well</div>
+                          <div class="item-after">
+                            <span class="small">Friday</span>
+                          </div>
                         </div>
+
                       </div></a>
                       <div class="swipeout-actions-right">
                         <a href="#" class="demo-actions" style="left: 0px;">More</a>
@@ -254,7 +273,9 @@
                         <div class="item-media"><i class="fa fa-1x fa-list-alt"></i></div>
                         <div class="item-inner"> 
                           <div class="item-title">Helping Angela</div>
-                          <div class="item-after"><span class="badge bg-black">10</span></div>
+                          <div class="item-after">
+                            <span class="small">Friday</span>
+                          </div>
                         </div>
                       </div></a>
 
@@ -387,7 +408,7 @@
         var now = new moment();
         if(now.format("dddd") == "saturday" || "sunday")
           document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
-        else if(now.format("dddd") == "friday")
+        else if(now.format("dddd") == "Fri")
           document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
         else 
           document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
