@@ -103,7 +103,7 @@
       <div class="content-block">
         <p>
           For bug report, feedback and security matters, please send an email to
-          ytbryan@gmail.com. You can also reach me at twitter <a href="http://www.twitter.com/ytbryan">@ytbryan</a> (Please use email for security issue.) 
+          doerlist@gmail.com. You can also reach me at twitter <a class="external" href="http://www.twitter.com/doerlist">@doerlist</a> (Please use email for security issue.) 
         </p>
 
         <p>
@@ -431,8 +431,22 @@
     
     <script>
 
+      // document.addEventListener('DOMContentLoaded', () => {
+      //   var myApp = new Framework7();      
+      //   var $$ = Dom7;
+
+      //   $$('#mark_as_completed').on('click', function () {
+      //     alert("hello")
+      //   });
+      // });
+
       var myApp = new Framework7();      
       var $$ = Dom7;
+
+
+      $$('#mark_as_completed').on('click', function () {
+        alert("hello")
+      });
 
       $$('.toggle-sortable').on('click', function () {
         if ($(this).text() == "Done")
