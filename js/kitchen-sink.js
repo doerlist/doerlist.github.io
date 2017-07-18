@@ -1,9 +1,7 @@
 var myApp = new Framework7({
     modalTitle: '',
-    // pushState: true,
-    // material: true,
-    // animatePages:false,
-    animateNavBackIcon: false,
+    pushState: true,
+    animateNavBackIcon: true,
 });
 
 // Expose Internal DOM library
