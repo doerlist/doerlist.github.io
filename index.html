@@ -20,6 +20,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <style>
+      .fa {
+        /* display: table-cell; 
+        vertical-align: top; */
+        /* margin-top: -20px; */
+      }
+      .navbar a.icon-only, .toolbar a.icon-only, .subnavbar a.icon-only {
+        min-width: 0px;
+        /* temp fix, unsure if 0px is the best asthetic */
+      }
       .roboto1 {
           font-family: 'Roboto', sans-serif;
           /* font-weight: 700; */
@@ -39,6 +48,8 @@
 
       .item-media .framework7-icons, .item-media .f7-icons {
         font-size: 20px;
+        margin-top:10px;
+        margin-left: -5px;
       }
 
       .list-block.inset {
@@ -60,6 +71,11 @@
       }
       .small {
         font-size:14px;
+        margin-top: -2px;
+      }
+
+      .align12{
+        margin-left: 10px;
       }
 
     </style>
@@ -98,16 +114,16 @@
               <div class="item-content">
                 <div class="item-media"><i class="fa fa-1x fa-credit-card"></i></div>
                 <div class="item-inner"> 
-                  <div class="item-title">Buy archive</div>
+                  <div class="item-title">Buy Archive</div>
                 </div>
            </div></a></li>
 
 
           <li><a href="completed.html" class="item-link close-panel"> 
               <div class="item-content">
-                <div class="item-media"><i class="fa fa-1x fa-credit-card"></i></div>
+                <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
                 <div class="item-inner"> 
-                  <div class="item-title">View completed tasks</div>
+                  <div class="item-title">View Completed Tasks</div>
                 </div>
            </div></a></li>
 
@@ -228,11 +244,9 @@
                           <span class="small">More</span>
                         </a>
                         <a href="#" class="bg-blue demo-actions" style="left: 0px;">
-                          <!-- <i class="fa fa-1x fa-archive"></i> -->
                           <span class="small">Archive</span></a>
                         <a href="#" class="bg-green swipeout-delete" 
                         style="left: 0px;">
-                        <!-- <i class="fa fa-1x fa-check-circle"></i> -->
                         <span class="small">Complete</span>
                       </a></div>
                       <div class="sortable-handler"></div>
@@ -399,7 +413,7 @@
     </div>
 
 
-    <div class="popup demo-popup">
+    <!-- <div class="popup demo-popup">
       <div class="view navbar-fixed">
         <div class="pages">
           <div class="page">
@@ -421,9 +435,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="picker-modal picker-modal-demo">
+    <!-- <div class="picker-modal picker-modal-demo">
       <div class="toolbar">
         <div class="toolbar-inner">
           <div class="left"></div>
@@ -435,85 +449,13 @@
           <p>Integer mollis nulla id nibh elementum finibus. Maecenas eget fermentum ipsum. Sed sagittis condimentum nisl at tempus. Duis lacus libero, laoreet vitae ligula a, aliquet eleifend sapien. Nullam sodales viverra sodales. Nulla hendrerit condimentum dolor facilisis tempor. Donec at est malesuada, sagittis nisi et, accumsan enim.</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
     <script type="text/javascript" src="build/js/framework7.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
-        
-    <script>
-
-
-      // $$('#mark_as_completed').on('click', function () {
-      //   alert("hello")
-      // });
-
-      // $$('.toggle-sortable').on('click', function () {
-      //   if ($(this).text() == "Done")
-      //     $(this).text("Edit")
-      //   else
-      //     $(this).text("Done");
-      //   myApp.sortableToggle('.sortable');
-      // });
-
-
-      
-      // function time() {
-      //   var now = new moment();
-      //   document.getElementById('time').innerText = now.format("hh:mm A");
-      // }
-
-      // function set_day(){
-      //   var now = new moment();
-      //   if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday")
-      //     document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
-      //   else if(now.format("dddd") == "friday")
-      //     document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
-      //   else 
-      //     document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
-      // }
-
-      // function update_date_time(){
-      //   set_day()
-      //   time()
-      // }
-
-      // function everything(){
-      //   set_day()
-      //   time()
-      //   setInterval(update_date_time, 5000)
-      // }
-
-
-      // $$('#create_task').on('click', function () {
-      //   var buttons = [
-      //       {
-      //           text: 'Delete this task',
-      //           onClick: function () {
-      //               myApp.alert('Button4 clicked');
-      //           }
-
-      //       },
-      //       {
-      //           text: 'Copy public link',
-      //           onClick: function () {
-      //               myApp.alert('Button4 clicked');
-      //           }
-                
-      //       },
-      //       {
-      //           text: 'Cancel',
-      //           color: 'red'
-      //       },
-      //   ];
-      //   myApp.actions(buttons);
-      // });
-
-
-      // window.onload = everything;
-    </script>
-  
+         
 </body>
 </html>

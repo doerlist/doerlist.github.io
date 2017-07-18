@@ -1,5 +1,5 @@
 var myApp = new Framework7({
-    modalTitle: 'Framework7',
+    modalTitle: '',
     pushState: true,
     animateNavBackIcon: true,
 });
@@ -50,17 +50,30 @@ var rightView = myApp.addView('.view-right', {
 
 
 myApp.onPageInit('show', function (page) {
+
+    $$('#mark_as_completed').on('click', function () {
+        myApp.confirm('Mark this list as completed?', function () {
+            myApp.alert('List completed');
+        })
+    })
+
+    $$('#archive_this_task').on('click', function () {
+        myApp.confirm('Archive this task?', function () {
+           myApp.alert('Task archived');
+        })
+    })
+
     $$('#more_actions').on('click', function () {
     var buttons = [
         {
-            text: 'Delete this list',
+            text: 'Delete This List',
             onClick: function () {
                 myApp.alert('Button4 clicked');
             }
 
         },
         {
-            text: 'Copy public link',
+            text: 'Copy Public Link',
             onClick: function () {
                 myApp.alert('Button4 clicked');
             }
