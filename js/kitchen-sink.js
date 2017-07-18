@@ -7,6 +7,35 @@ var myApp = new Framework7({
 // Expose Internal DOM library
 var $$ = Dom7;
 
+
+function time() {
+var now = new moment();
+document.getElementById('time').innerText = now.format("hh:mm A");
+}
+
+function set_day(){
+var now = new moment();
+if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday")
+    document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
+else if(now.format("dddd") == "friday")
+    document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
+else 
+    document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
+}
+
+function update_date_time(){
+set_day()
+time()
+}
+
+function everything(){
+set_day()
+time()
+setInterval(update_date_time, 5000)
+}
+
+window.onload = everything;
+
 // Add main view
 var mainView = myApp.addView('.view-main', {
     // Enable Dynamic Navbar for this view
