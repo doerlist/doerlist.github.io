@@ -8,13 +8,13 @@ var $$ = Dom7;
 
 myApp.onPageInit('index', function (page) {
     // Dummy Content
-    var songs = ['Yellow Submarine', 'Don\'t Stop Me Now', 'Billie Jean', 'Californication'];
-    var authors = ['Beatles', 'Queen', 'Michael Jackson', 'Red Hot Chili Peppers'];
-    // Pull to refresh content
+    // var songs = ['Yellow Submarine', 'Don\'t Stop Me Now', 'Billie Jean', 'Californication'];
+    // var authors = ['Beatles', 'Queen', 'Michael Jackson', 'Red Hot Chili Peppers'];
+
     var ptrContent = $$(page.container).find('.pull-to-refresh-content');
-    // Add 'refresh' listener on it
+
     ptrContent.on('refresh', function (e) {
-        // Emulate 2s loading
+
         setTimeout(function () {
             // var picURL = 'http://lorempixel.com/88/88/abstract/' + Math.round(Math.random() * 10);
             // var song = songs[Math.floor(Math.random() * songs.length)];
