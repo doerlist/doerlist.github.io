@@ -97,6 +97,15 @@
                 </div>
            </div></a></li>
 
+
+          <li><a href="completed.html" class="item-link close-panel"> 
+              <div class="item-content">
+                <div class="item-media"><i class="fa fa-1x fa-credit-card"></i></div>
+                <div class="item-inner"> 
+                  <div class="item-title">View completed tasks</div>
+                </div>
+           </div></a></li>
+
         </ul>
       </div>
       
@@ -468,9 +477,9 @@
 
       function set_day(){
         var now = new moment();
-        if(now.format("dddd") == "saturday" || "sunday")
+        if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday")
           document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
-        else if(now.format("dddd") == "Fri")
+        else if(now.format("dddd") == "friday")
           document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
         else 
           document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
