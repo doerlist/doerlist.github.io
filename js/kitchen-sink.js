@@ -16,19 +16,19 @@ myApp.onPageInit('index', function (page) {
     ptrContent.on('refresh', function (e) {
         // Emulate 2s loading
         setTimeout(function () {
-            var picURL = 'http://lorempixel.com/88/88/abstract/' + Math.round(Math.random() * 10);
-            var song = songs[Math.floor(Math.random() * songs.length)];
-            var author = authors[Math.floor(Math.random() * authors.length)];
-            var linkHTML = '<li class="item-content">' +
-                                '<div class="item-media"><img src="' + picURL + '" width="44"/></div>' +
-                                '<div class="item-inner">' +
-                                    '<div class="item-title-row">' +
-                                        '<div class="item-title">' + song + '</div>' +
-                                    '</div>' +
-                                    '<div class="item-subtitle">' + author + '</div>' +
-                                '</div>' +
-                            '</li>';
-            ptrContent.find('ul').prepend(linkHTML);
+            // var picURL = 'http://lorempixel.com/88/88/abstract/' + Math.round(Math.random() * 10);
+            // var song = songs[Math.floor(Math.random() * songs.length)];
+            // var author = authors[Math.floor(Math.random() * authors.length)];
+            // var linkHTML = '<li class="item-content">' +
+            //                     '<div class="item-media"><img src="' + picURL + '" width="44"/></div>' +
+            //                     '<div class="item-inner">' +
+            //                         '<div class="item-title-row">' +
+            //                             '<div class="item-title">' + song + '</div>' +
+            //                         '</div>' +
+            //                         '<div class="item-subtitle">' + author + '</div>' +
+            //                     '</div>' +
+            //                 '</li>';
+            // ptrContent.find('ul').prepend(linkHTML);
             // When loading done, we need to "close" it
             myApp.pullToRefreshDone();
         }, 2000);
