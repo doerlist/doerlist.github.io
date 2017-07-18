@@ -1,6 +1,8 @@
 var myApp = new Framework7({
     modalTitle: '',
-    // pushState: true,
+    pushState: true,
+    // material: true,
+    // animatePages:false,
     animateNavBackIcon: false,
 });
 
