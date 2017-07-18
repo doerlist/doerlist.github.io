@@ -1,5 +1,6 @@
 var myApp = new Framework7({
     modalTitle: 'Framework7',
+    pushState: true,
     animateNavBackIcon: true,
 });
 
@@ -17,6 +18,35 @@ var rightView = myApp.addView('.view-right', {
     dynamicNavbar: true,
     name: 'right'
 });
+
+
+myApp.onPageInit('show', function (page) {
+    $$('#more_actions').on('click', function () {
+    var buttons = [
+        {
+            text: 'Delete this list',
+            onClick: function () {
+                myApp.alert('Button4 clicked');
+            }
+
+        },
+        {
+            text: 'Copy public link',
+            onClick: function () {
+                myApp.alert('Button4 clicked');
+            }
+            
+        },
+        {
+            text: 'Cancel',
+            color: 'red'
+        },
+    ];
+    myApp.actions(buttons);
+    });
+});
+
+
 
 // Show/hide preloader for remote ajax loaded pages
 // Probably should be removed on a production/local app
@@ -38,6 +68,16 @@ $$(document).on('ajaxComplete', function (e) {
 // Callbacks for specific pages when it initialized
 /* ===== Modals Page events  ===== */
 myApp.onPageInit('modals', function (page) {
+
+    // $$('.toggle-sortable').on('click', function () {
+    //     if ($(this).text() == "Done")
+    //         $(this).text("Edit")
+    //     else
+    //         $(this).text("Done");
+    //     myApp.sortableToggle('.sortable');
+    // });
+
+
     $$('.demo-alert').on('click', function () {
         myApp.alert('Hello!');
     });
@@ -79,6 +119,10 @@ myApp.onPageInit('modals', function (page) {
 
 /* ===== Preloader Page events ===== */
 myApp.onPageInit('preloader', function (page) {
+
+
+
+
     $$('.demo-indicator').on('click', function () {
         myApp.showIndicator();
         setTimeout(function () {

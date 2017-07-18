@@ -17,8 +17,13 @@
     <link rel="icon" href="img/icon.png">
     <link rel="apple-touch-icon" href="img/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <style>
+      .roboto1 {
+          font-family: 'Roboto', sans-serif;
+          /* font-weight: 700; */
+      }
 
       .list-block .item-inner {
         padding-top: 15px;
@@ -176,7 +181,7 @@
         <div class="navbar">
           <div class="navbar-inner">
             <div class="left"></div>
-            <div class="center sliding">★ Doerlist</div>
+            <div class="center sliding"> <span class="roboto">★ doerlist</span></div>
           </div>
         </div>
         
@@ -184,7 +189,7 @@
           <div class="toolbar-inner">
              <a href="#" data-panel="left" class="open-panel link icon-only"> 
                <i class="icon icon-bars"></i></a> 
-            <a id="create_task" href="create.html" data-popover="" class="link">New Task</a></div>
+            <a href="create.html" data-popover="" class="link">New Task</a></div>
         </div>
 
         <div class="pages navbar-through toolbar-through">
@@ -437,33 +442,24 @@
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
-    
+        
     <script>
-
-      // document.addEventListener('DOMContentLoaded', () => {
-      //   var myApp = new Framework7();      
-      //   var $$ = Dom7;
-
-      //   $$('#mark_as_completed').on('click', function () {
-      //     alert("hello")
-      //   });
-      // });
 
       var myApp = new Framework7();      
       var $$ = Dom7;
 
 
-      $$('#mark_as_completed').on('click', function () {
-        alert("hello")
-      });
+      // $$('#mark_as_completed').on('click', function () {
+      //   alert("hello")
+      // });
 
-      $$('.toggle-sortable').on('click', function () {
-        if ($(this).text() == "Done")
-          $(this).text("Edit")
-        else
-          $(this).text("Done");
-        myApp.sortableToggle('.sortable');
-      });
+      // $$('.toggle-sortable').on('click', function () {
+      //   if ($(this).text() == "Done")
+      //     $(this).text("Edit")
+      //   else
+      //     $(this).text("Done");
+      //   myApp.sortableToggle('.sortable');
+      // });
 
 
       function blinking(){
@@ -521,30 +517,6 @@
       //   myApp.actions(buttons);
       // });
 
-
-            $$('#create_task').on('click', function () {
-        var buttons = [
-            {
-                text: 'Delete this list',
-                onClick: function () {
-                    myApp.alert('Button4 clicked');
-                }
-
-            },
-            {
-                text: 'Copy public link',
-                onClick: function () {
-                    myApp.alert('Button4 clicked');
-                }
-                
-            },
-            {
-                text: 'Cancel',
-                color: 'red'
-            },
-        ];
-        myApp.actions(buttons);
-      });
 
       window.onload = everything;
     </script>
