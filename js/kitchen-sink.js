@@ -42,7 +42,17 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
 });
 
+
+myApp.onPageBack('show_project_doerlist', function(page){
+    document.getElementById('new_task').innerText = "New Task"
+})
+
+myApp.onPageInit('show_project_doerlist', function (page) {
+    document.getElementById('new_task').innerText = "Add Task"
+})
+
 myApp.onPageInit('show', function (page) {
+    
 
     $$('#mark_as_completed').on('click', function () {
         myApp.confirm('Mark this task as completed?', function () {
