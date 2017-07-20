@@ -5,35 +5,57 @@ var myApp = new Framework7({
 
 // Expose Internal DOM library
 var $$ = Dom7;
+var domain = ""
 
 myApp.onPageInit('index', function (page) {
-    // Dummy Content
-    // var songs = ['Yellow Submarine', 'Don\'t Stop Me Now', 'Billie Jean', 'Californication'];
-    // var authors = ['Beatles', 'Queen', 'Michael Jackson', 'Red Hot Chili Peppers'];
+    
+
+
+        var virtualList = myApp.virtualList($$(page.container).find('.virtual-list'), {
+        // Pass array with items
+        items: items,
+        // Custom search function for searchbar
+        searchAll: function (query, items) {
+            var found = [];
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].title.indexOf(query) >= 0 || query.trim() === '') found.push(i);
+            }
+            return found; //return array with mathced indexes
+        },
+        // List item Template7 template
+        template: '<li>' +
+                    '<a href="#" class="item-link item-content">' +
+                      '<div class="item-inner">' +
+                        '<div class="item-title-row">' +
+                          '<div class="item-title">{{title}}</div>' +
+                        '</div>' +
+                        '<div class="item-subtitle">{{subtitle}}</div>' +
+                      '</div>' +
+                    '</a>' +
+                  '</li>',
+        // Item height
+        height: 63,
+    });
+
+    
+    axios.get(join(domain,'/'))
+    .then(function (response) {
+        //show the data here. 
+        console.log(response);
+    })
+    .catch(function (error) {
+        //if you can't take to the server you should do something else
+        console.log(error);
+    });
 
     var ptrContent = $$(page.container).find('.pull-to-refresh-content');
 
     ptrContent.on('refresh', function (e) {
-
         setTimeout(function () {
-            // var picURL = 'http://lorempixel.com/88/88/abstract/' + Math.round(Math.random() * 10);
-            // var song = songs[Math.floor(Math.random() * songs.length)];
-            // var author = authors[Math.floor(Math.random() * authors.length)];
-            // var linkHTML = '<li class="item-content">' +
-            //                     '<div class="item-media"><img src="' + picURL + '" width="44"/></div>' +
-            //                     '<div class="item-inner">' +
-            //                         '<div class="item-title-row">' +
-            //                             '<div class="item-title">' + song + '</div>' +
-            //                         '</div>' +
-            //                         '<div class="item-subtitle">' + author + '</div>' +
-            //                     '</div>' +
-            //                 '</li>';
-            // ptrContent.find('ul').prepend(linkHTML);
-            // When loading done, we need to "close" it
             myApp.pullToRefreshDone();
         }, 2000);
     });
-});
+})
 
 function time() {
     var now = new moment();
