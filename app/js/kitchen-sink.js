@@ -1,76 +1,30 @@
 var myApp = new Framework7({
     modalTitle: '',
     animateNavBackIcon: true,
+    template7Pages: true, // enable Template7 rendering for Ajax and Dynamic pages
 });
+
 
 // Expose Internal DOM library
 var $$ = Dom7;
-var domain = ""
-
-myApp.onPageInit('index', function (page) {
-    
-
-
-        var virtualList = myApp.virtualList($$(page.container).find('.virtual-list'), {
-        // Pass array with items
-        items: items,
-        // Custom search function for searchbar
-        searchAll: function (query, items) {
-            var found = [];
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].title.indexOf(query) >= 0 || query.trim() === '') found.push(i);
-            }
-            return found; //return array with mathced indexes
-        },
-        // List item Template7 template
-        template: '<li>' +
-                    '<a href="#" class="item-link item-content">' +
-                      '<div class="item-inner">' +
-                        '<div class="item-title-row">' +
-                          '<div class="item-title">{{title}}</div>' +
-                        '</div>' +
-                        '<div class="item-subtitle">{{subtitle}}</div>' +
-                      '</div>' +
-                    '</a>' +
-                  '</li>',
-        // Item height
-        height: 63,
-    });
-
-    
-    axios.get(join(domain,'/'))
-    .then(function (response) {
-        //show the data here. 
-        console.log(response);
-    })
-    .catch(function (error) {
-        //if you can't take to the server you should do something else
-        console.log(error);
-    });
-
-    var ptrContent = $$(page.container).find('.pull-to-refresh-content');
-
-    ptrContent.on('refresh', function (e) {
-        setTimeout(function () {
-            myApp.pullToRefreshDone();
-        }, 2000);
-    });
-})
 
 function time() {
-    var now = new moment();
-    document.getElementById('time').innerText = now.format("hh:mm A");
+    if(document.getElementById('time') != null) {
+        var now = new moment();
+        document.getElementById('time').innerText = now.format("hh:mm A");
+    }
 }
 
 function set_day(){
-    var now = new moment();
-
-    if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday")
-        document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
-    else if(now.format("dddd") == "friday")
-        document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
-    else 
-        document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
+    if(document.getElementById('day') != null) {
+        var now = new moment();
+        if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday")
+            document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
+        else if(now.format("dddd") == "friday")
+            document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
+        else 
+            document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
+    }
 }
 
 function update_date_time(){
@@ -88,10 +42,45 @@ window.onload = everything;
 
 // Add main view
 var mainView = myApp.addView('.view-main', {
-    // Enable Dynamic Navbar for this view
     dynamicNavbar: true,
 });
 
+var searchTemplate = $('script#myTemplate').html();
+var value = 1
+var virtualList;
+axios.get("http://localhost:3000/tasks.json")
+.then(function (response) {
+    value = response.data.length
+    var items = response.data
+    virtualList = myApp.virtualList($$(mainView.container).find('.virtual-list'), {
+        items: items,
+        template: searchTemplate,
+        // height: function (item) {
+        //     return 50;
+        // }
+    });
+})
+.catch(function (error) {
+    console.log(error);
+});
+
+
+var ptrContent = $$(mainView.container).find('.pull-to-refresh-content');
+ptrContent.on('refresh', function (e) {
+    axios.get("http://localhost:3000/tasks.json")
+    .then(function (response) {        
+        setTimeout(function () {
+            virtualList.items = response.data
+            virtualList.clearCache();
+            virtualList.update();
+            myApp.pullToRefreshDone();
+        }, 3000)
+        
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+});
 
 myApp.onPageBack('show_project_doerlist', function(page){
     document.getElementById('new_task').innerText = "New Task"
@@ -101,8 +90,36 @@ myApp.onPageInit('show_project_doerlist', function (page) {
     document.getElementById('new_task').innerText = "Add Task"
 })
 
+myApp.onPageInit('show_project_doerlist', function (page) {
+    axios.get("http://localhost:3000/project/1.json")
+    .then(function (response) {        
+        setTimeout(function () {
+            // virtualList.items = response.data
+            // virtualList.clearCache();
+            // virtualList.update();
+            // myApp.pullToRefreshDone();
+        }, 1000)
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+})
+
 myApp.onPageInit('show', function (page) {
-    
+
+    axios.get("http://localhost:3000/tasks/1.json")
+    .then(function (response) {        
+        setTimeout(function () {
+            // virtualList.items = response.data
+            // virtualList.clearCache();
+            // virtualList.update();
+            // myApp.pullToRefreshDone();
+        }, 1000)
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
 
     $$('#mark_as_completed').on('click', function () {
         myApp.confirm('Mark this task as completed?', function () {
@@ -141,7 +158,43 @@ myApp.onPageInit('show', function (page) {
     });
 });
 
+myApp.onPageInit('create', function (page) {
+    $$('#create').on('click', function () {
+        // url = "http://localhost:3000/projects.json"
+        // data = {"completion_status":100,
+        //         "archive":true,
+        //         "public_link":"",
+        //         "public_link_status":true,
+        //         "name":"test ",
+        //         "created_at":"2017-07-19T08:55:40.217Z",
+        //         "updated_at":"2017-07-19T08:55:40.217Z"}
 
+        url = "http://localhost:3000/tasks.json"
+        data = {"note":"",
+                "duedate":"2017-07-20T09:50:00.000Z",
+                "priority":null,
+                "public_link":"",
+                "completion_status":null,
+                "archive":false,
+                "public_link_status":false,
+                "name":"ready",
+                "created_at":"2017-07-20T09:50:46.454Z",
+                "updated_at":"2017-07-20T09:58:09.541Z",
+                "url":"http://localhost:3000/tasks/8.json"}
+
+        axios.post(url, data)
+        .then(function (response) { 
+            myApp.showIndicator();       
+            setTimeout(function () {
+                myApp.hideIndicator();
+                mainView.router.back();
+            }, 1000)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    })
+});
 
 // Show/hide preloader for remote ajax loaded pages
 // Probably should be removed on a production/local app
@@ -159,144 +212,6 @@ $$(document).on('ajaxComplete', function (e) {
     }
     myApp.hideIndicator();
 });
-
-// // Callbacks for specific pages when it initialized
-// /* ===== Modals Page events  ===== */
-// myApp.onPageInit('modals', function (page) {
-
-//     // $$('.toggle-sortable').on('click', function () {
-//     //     if ($(this).text() == "Done")
-//     //         $(this).text("Edit")
-//     //     else
-//     //         $(this).text("Done");
-//     //     myApp.sortableToggle('.sortable');
-//     // });
-
-
-//     $$('.demo-alert').on('click', function () {
-//         myApp.alert('Hello!');
-//     });
-//     $$('.demo-confirm').on('click', function () {
-//         myApp.confirm('Are you feel good today?', function () {
-//             myApp.alert('Great!');
-//         });
-//     });
-//     $$('.demo-prompt').on('click', function () {
-//         myApp.prompt('What is your name?', function (data) {
-//             // @data contains input value
-//             myApp.confirm('Are you sure that your name is ' + data + '?', function () {
-//                 myApp.alert('Ok, your name is ' + data + ' ;)');
-//             });
-//         });
-//     });
-//     $$('.demo-login').on('click', function () {
-//         myApp.modalLogin('Enter your username and password', function (username, password) {
-//             myApp.alert('Thank you! Username: ' + username + ', password: ' + password);
-//         });
-//     });
-//     $$('.demo-password').on('click', function () {
-//         myApp.modalPassword('Enter your password', function (password) {
-//             myApp.alert('Thank you! Password: ' + password);
-//         });
-//     });
-//     $$('.demo-modals-stack').on('click', function () {
-//         // Open 5 alerts
-//         myApp.alert('Alert 1');
-//         myApp.alert('Alert 2');
-//         myApp.alert('Alert 3');
-//         myApp.alert('Alert 4');
-//         myApp.alert('Alert 5');
-//     });
-//     $$('.demo-picker-modal').on('click', function () {
-//         myApp.pickerModal('.picker-modal-demo');
-//     });
-// });
-
-// /* ===== Preloader Page events ===== */
-// myApp.onPageInit('preloader', function (page) {
-
-//     $$('.demo-indicator').on('click', function () {
-//         myApp.showIndicator();
-//         setTimeout(function () {
-//             myApp.hideIndicator();
-//         }, 2000);
-//     });
-//     $$('.demo-preloader').on('click', function () {
-//         myApp.showPreloader();
-//         setTimeout(function () {
-//             myApp.hidePreloader();
-//         }, 2000);
-//     });
-//     $$('.demo-preloader-custom').on('click', function () {
-//         myApp.showPreloader('My text...');
-//         setTimeout(function () {
-//             myApp.hidePreloader();
-//         }, 2000);
-//     });
-// });
-
-// /* ===== Swipe to delete events callback demo ===== */
-// myApp.onPageInit('swipe-delete', function (page) {
-//     $$('.demo-remove-callback').on('deleted', function () {
-//         myApp.alert('Thanks, item removed!');
-//     });
-// });
-// myApp.onPageInit('swipe-delete media-lists', function (page) {
-//     $$('.demo-reply').on('click', function () {
-//         myApp.alert('Reply');
-//     });
-//     $$('.demo-mark').on('click', function () {
-//         myApp.alert('Mark');
-//     });
-//     $$('.demo-forward').on('click', function () {
-//         myApp.alert('Forward');
-//     });
-// });
-
-
-// /* ===== Action sheet, we use it on few pages ===== */
-// myApp.onPageInit('swipe-delete modals media-lists', function (page) {
-//     var actionSheetButtons = [
-//         // First buttons group
-//         [
-//             // Group Label
-//             {
-//                 text: 'Here comes some optional description or warning for actions below',
-//                 label: true
-//             },
-//             // First button
-//             {
-//                 text: 'Alert',
-//                 onClick: function () {
-//                     myApp.alert('He Hoou!');
-//                 }
-//             },
-//             // Another red button
-//             {
-//                 text: 'Nice Red Button ',
-//                 color: 'red',
-//                 onClick: function () {
-//                     myApp.alert('You have clicked red button!');
-//                 }
-//             },
-//         ],
-//         // Second group
-//         [
-//             {
-//                 text: 'Cancel',
-//                 bold: true
-//             }
-//         ]
-//     ];
-//     $$('.demo-actions').on('click', function (e) {
-//         myApp.actions(actionSheetButtons);
-//     });
-//     $$('.demo-actions-popover').on('click', function (e) {
-//         // We need to pass additional target parameter (this) for popover
-//         myApp.actions(this, actionSheetButtons);
-//     });
-
-// });
 
 
 

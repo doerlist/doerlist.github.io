@@ -18,79 +18,9 @@
     <link rel="apple-touch-icon" href="img/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 
-    <style>
-
-      .modal-text {
-        font-size: 18px;
-        font-weight:500;
-      }
-      .actions-modal.modal-in {
-          user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
-      }
-      .navbar a.icon-only, .toolbar a.icon-only, .subnavbar a.icon-only {
-        min-width: 0px;
-        /* temp fix, unsure if 0px is the best asthetic */
-      }
-      .roboto1 {
-          font-family: 'Roboto', sans-serif;
-          /* font-size: 22px; */
-          /* font-weight: 700; */
-      }
-
-      .list-block .item-inner {
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-      .list-block .item-title.label {
-        width: 25%;
-      }
-
-      .list-block .swipeout-actions-left a, .list-block .swipeout-actions-right a {
-        padding: 7px;
-      }
-
-      .item-media .framework7-icons, .item-media .f7-icons {
-        font-size: 20px;
-        margin-top:10px;
-        margin-left: -5px;
-      }
-
-      .list-block.inset {
-        margin-left: 5px;
-        margin-right: 5px;
-      }
-      .text-center {
-        text-align: center;
-      }
-
-      .list-block .item-title {
-        white-space: normal;
-      }
-      .list-block .item-content {
-        padding-left: 10px;
-      }
-      .list-block .item-media + .item-inner {
-        margin-left: 10px;
-      }
-      .small {
-        font-size:14px;
-        margin-top: -2px;
-      }
-      div.item-media.fix123{
-        padding:2px;
-      }
-      /* .align12{
-        margin-left: 10px;
-      } */
-
-    </style>
   </head>
-
 
   <body>
     <div class="statusbar-overlay"></div>
@@ -129,9 +59,6 @@
                 </div>
            </div></a></li>
 
-
-
-
         </ul>
       </div>
       
@@ -148,55 +75,6 @@
       </div>
       
     </div>
-
-    <div class="panel panel-right panel-reveal layout-dark">
-
-      <div class="view view-right">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="center sliding">Settings</div>
-          </div>
-        </div>
-
-        <div class="pages navbar-through">
-          <div data-page="panel-right1" class="page">
-            <div class="page-content"> 
-              <div class="content-block">
-                <p>This is a right side panel. You can close it by clicking outsite or on this link: 
-                  <a href="#" class="close-panel">close me</a>. 
-                  You can put here anything, even another isolated view, try it:</p>
-              </div>
-              <div class="list-block">
-                <ul>
-                  <li><a href="about.html" class="item-link"> 
-                      <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title">Account</div>
-                        </div>
-                      </div></a></li>
-                  <li><a href="panel-right3.html" class="item-link">
-                      <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title">Notifications</div>
-                        </div>
-                      </div></a></li>
-
-                  <li><a href="panel-right3.html" class="item-link">
-                      <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title">Buy achieve</div>
-                          
-                        </div>
-                      </div>
-                  </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <div class="views">
       <div class="view view-main">
@@ -216,27 +94,40 @@
 
         <div class="pages navbar-through toolbar-through">
           <div data-page="index" class="page">
-            <div class="page-content pull-to-refresh-content">
 
-            <div class="pull-to-refresh-layer">
-              <div class="preloader"></div>
-              <div class="pull-to-refresh-arrow"></div>
-            </div>
+              <div class="page-content pull-to-refresh-content">
 
+              <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+              </div>
 
               <div class="content-block-title text-center">
                 <span id="day"></span>
               </div>
+
               <div class="content-block text-center">
                   <h1><span id="time"></span></h1>
-            </div>
-
+              </div>
 
               <div class="content-block-title">All your tasks</div>
 
               <!-- <div class="content-block-title">
                 ALl done. Well done! 👏👏👏 
               </div> -->
+
+              <div class="list-block virtual-list searchbar-found media-list">
+
+              </div> 
+              <div class="list-block searchbar-not-found">
+                <ul>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Nothing found</div>
+                    </div>
+                  </li>
+                </ul>
+              </div> 
 
               <div class="list-block sortable">
                 <ul>
@@ -327,10 +218,67 @@
       </div>
     </div>
 
+    <script type="text/template7" id="myTemplate">
+        <li class="swipeout transitioning">
+          {{#if archive}}
+            <a href="show.html" class="item-link ">
+              <div class="item-content swipeout-content">
+              <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
+              <div class="item-inner">
+                <!-- <div class="item-after">                            
+                  <span class="small">9:20am</span>
+                </div> -->
+                <div class="item-title-row">
+                  <div class="item-title">{{name}}</div>
+                  <div class="item-after">                            
+                    <span class="small">9:20am</span>
+                  </div>
+                </div>
+                <!-- <div class="item-subtitle">{{note}}</div> -->
+
+              </div> 
+            </div>
+            </a>
+          {{else}}
+            <a href="show_project_doerlist.html" class="item-link ">
+              <div class="item-content swipeout-content">
+              <div class="item-media"><i class="fa fa-1x fa-list-alt"></i></div>
+              <div class="item-inner">
+                <!-- <div class="item-after">                            
+                  <span class="small">9:20am</span>
+                </div> -->
+                <div class="item-title-row">
+                  <div class="item-title">{{name}}</div>
+                  <div class="item-after">                            
+                    <span class="small">9:20am</span>
+                  </div>
+                </div>
+                <!-- <div class="item-subtitle">{{note}}</div> -->
+
+              </div> 
+            </div>
+            </a>
+          {{/if}}
+
+                  <div class="swipeout-actions-right">
+          <a href="#" class="demo-actions" style="left: 0px;">
+            <span class="small">More</span>
+          </a>
+          <a href="#" class="bg-blue demo-actions" style="left: 0px;">
+            <span class="small">Archive</span></a>
+          <a href="#" class="bg-green swipeout-delete" 
+          style="left: 0px;">
+          <span class="small">Complete</span>
+        </a></div>
+        <div class="sortable-handler"></div>
+      </li>        
+    </script>  
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
     <script type="text/javascript" src="build/js/framework7.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
-         
+
 </body>
 </html>

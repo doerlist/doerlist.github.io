@@ -1,0 +1,63 @@
+      .modal-text {
+        font-size: 18px;
+        font-weight:500;
+      }
+      .actions-modal.modal-in {
+          user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+      }
+      .navbar a.icon-only, .toolbar a.icon-only, .subnavbar a.icon-only {
+        min-width: 0px;
+        /* temp fix, unsure if 0px is the best asthetic */
+      }
+      .roboto1 {
+          font-family: 'Roboto', sans-serif;
+          /* font-size: 22px; */
+          /* font-weight: 700; */
+      }
+
+      .list-block .item-inner {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .list-block .item-title.label {
+        width: 25%;
+      }
+
+      .list-block .swipeout-actions-left a, .list-block .swipeout-actions-right a {
+        padding: 7px;
+      }
+
+      .item-media .framework7-icons, .item-media .f7-icons {
+        font-size: 20px;
+        margin-top:10px;
+        margin-left: -5px;
+      }
+
+      .list-block.inset {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .text-center {
+        text-align: center;
+      }
+
+      .list-block .item-title {
+        white-space: normal;
+      }
+      .list-block .item-content {
+        padding-left: 10px;
+      }
+      .list-block .item-media + .item-inner {
+        margin-left: 10px;
+      }
+      .small {
+        font-size:14px;
+        margin-top: -2px;
+      }
+      div.item-media.fix123{
+        padding:2px;
+      }
