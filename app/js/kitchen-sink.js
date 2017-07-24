@@ -18,12 +18,15 @@ function time() {
 function set_day(){
     if(document.getElementById('day') != null) {
         var now = new moment();
-        if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday")
+        if(now.format("dddd") == "saturday" || now.format("dddd") == "sunday") {
             document.getElementById('day').innerText = "🎉🎉🎉 Happy " + now.format("dddd, MMMM Do")
-        else if(now.format("dddd") == "friday")
+        }
+        else if(now.format("dddd") == "friday") {
             document.getElementById('day').innerText = "🎉🎉 Happy " + now.format("dddd, MMMM Do")
-        else 
+        }
+        else {
             document.getElementById('day').innerText = "🎉 Happy " + now.format("dddd, MMMM Do")
+        }
     }
 }
 
