@@ -7575,7 +7575,7 @@ return t7;
                     // Show right actions
                     progress = translate / actionsRightWidth;
                     if (translate < -actionsRightWidth) {
-                        translate = -actionsRightWidth - Math.pow(-translate - actionsRightWidth, 0.9);
+                        translate = -actionsRightWidth - Math.pow(-translate - actionsRightWidth, 0.8);
                         if (overswipeRightButton.length > 0) {
                             overswipeRight = true;
                         }
