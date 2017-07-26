@@ -317,22 +317,19 @@
     </div>
 
     <script type="text/template7" id="myTemplate">
-        <li class="swipeout transitioning">
+        <li class="swipeout">
           {{#if archive}}
             <a href="show.html" class="item-link ">
               <div class="item-content swipeout-content">
               <div class="item-media"><i class="fa fa-1x fa-check-square-o"></i></div>
               <div class="item-inner">
-                <!-- <div class="item-after">                            
-                  <span class="small">9:20am</span>
-                </div> -->
                 <div class="item-title-row">
                   <div class="item-title">{{name}}</div>
                   <div class="item-after">                            
-                    <span class="small">9:20am</span>
+                    <span class="small">{{created_at}}</span>
                   </div>
                 </div>
-                <!-- <div class="item-subtitle">{{note}}</div> -->
+                 <div class="item-subtitle">{{note}}</div>  
 
               </div> 
             </div>
@@ -342,23 +339,20 @@
               <div class="item-content swipeout-content">
               <div class="item-media"><i class="fa fa-1x fa-list-alt"></i></div>
               <div class="item-inner">
-                <!-- <div class="item-after">                            
-                  <span class="small">9:20am</span>
-                </div> -->
                 <div class="item-title-row">
                   <div class="item-title">{{name}}</div>
                   <div class="item-after">                            
-                    <span class="small">9:20am</span>
+                    <span class="small">{{created_at}}</span>
                   </div>
                 </div>
-                <!-- <div class="item-subtitle">{{note}}</div> -->
+                 <div class="item-subtitle">{{note}}</div>  
 
               </div> 
             </div>
             </a>
           {{/if}}
 
-                  <div class="swipeout-actions-right">
+        <div class="swipeout-actions-right">
           <a href="#" class="demo-actions" >
             <span class="small">More</span>
           </a>
