@@ -28,7 +28,8 @@ body {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #212529;
+  /* color: #212529; */
+  color: rgb(201, 77, 72);
   background-color: #fff;
 }
 
