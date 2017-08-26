@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -11,23 +10,42 @@
     <title>Doerlist</title>
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <!-- Custom styles for this template -->
     <link href="css/round-about.css" rel="stylesheet">
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
         body {
-            color: rgb(201, 77, 72);            
+            margin: 0 0 100px; /* bottom = footer height */
+            padding: 50px;
+            padding-top: 80px;            
+            color: rgb(201, 77, 72);                        
+        }
+        
+        footer {
+            background-color: orange;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            overflow:hidden;
+        }
+
+        .text-center {
+            text-align: center;
         }
 
         .bg-dark {
             background-color: rgb(201, 77, 72) !important;    
         }
-
     </style>
-
 </head>
 
 <body>
@@ -45,12 +63,10 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
+
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="https://app.doerlist.com/users/sign_up">Sign Up</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="https://app.doerlist.com/users/sign_in">Sign In</a>
                 </li>
@@ -62,36 +78,43 @@
     <div class="container">
 
         <!-- Introduction Row -->
-        <h1 class="my-4">
+        <h1 class="my-4 text-center">
             Doerlist <small>is a simple way to organise your tasks, lists & work.</small></h1>
-        <p>Welcome! Doerlist is a simple and fast todo list for busy people.</p>
+
+        <p class="text-center">Welcome! Doerlist is a simple and fast todo list for busy people. 
+            <a href="feature">Take a full feature tour.</a>
+        </p>
 
         <!-- Team Members Row -->
         <div class="row">
-
             <div class="col-lg-4 col-sm-6 text-center mb-4">
                 <i class="fa fa-5x fa-fighter-jet "></i>                
-                <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
                 <h3>simple & fast</h3>
                 <p>Certain random text that are related to Simple & Fast Certain random text that are related to Simple & Fast Certain random text that are related to Simple & Fast</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
                 <i class="fa fa-5x fa-shield"></i>                
-                <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
                 <h3>secure & private</h3>
                 <p>Certain random text that are related to Secure & Private Certain random text that are related to Secure & Private Certain random text that are related to Secure & Private</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
                 <i class="fa fa-5x fa-check-circle"></i>
-                <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
-                <h3>better work at affordable price
+                <h3>better work & more time
                 </h3>
                 <p>Certain random text that are related to more work & affordable app Certain random text that are related to more work & affordable app Certain random text that are related to more work & affordable app</p>
-            </div>
-
-            
+            </div>            
         </div>
 
+        <br><br>
+
+        <p>
+            Not convinced? The best way to find out is to try it out yourself. We have three-day money back guarantee. 
+            Don't stop here. <a href="">Check out 20 more features in the features tour.</a>
+        </p>
+
+        <br><br>
+
+        
     </div>
     <!-- /.container -->
 
@@ -100,12 +123,10 @@
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Doerlist 2010 - 2017</p>
         </div>
-        <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="./vendor/jquery/jquery.min.js"></script>
-    <script src="./vendor/popper/popper.min.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
