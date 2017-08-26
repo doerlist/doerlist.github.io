@@ -1,102 +1,113 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, 
-    minimum-scale=1, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Doerlist</title>
 
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/round-about.css" rel="stylesheet">
+
     <style>
-        a {
-            color: rgb(201, 77, 72);
-        }
-        
         body {
-          font-family: 'Roboto', sans-serif;
+            color: rgb(201, 77, 72);            
         }
 
-        span.small {
-            font-size: 14px;
+        .bg-dark {
+            background-color: rgb(201, 77, 72) !important;    
         }
+
     </style>
-  </head>
 
-  <body>
-      
-    <a target="blank" href="http://app.doerlist.com/">Doerlist</a> is a todo list for busy introverts. 
-    
-    For only $1 per month, you get more work organised efficiently. <a target="blank" href="http://app.doerlist.com/login">Log in</a>. <a target="blank" href="http://app.doerlist.com/signup">Sign up</a>. <br><br>
-    
-    <p>Want to join as a beta tester? Send me an email at support@doerlist.com. We need designers, programmers, teachers, writers, non-profits, engineers, tech enthu or everyday ordinary folks. Join us as beta testers.
+</head>
 
-    Special Pricing for early adopters: <a href="">$10 forever</a>  </p>
+<body>
 
-    <p>Writing about productivity apps? If you wish to include doerlist in your article, send me an email at support@doerlist.com and tell me what you need.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="app/img/icon.png" width="25" height="25" alt="" style="border-radius: 5px;">                
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://app.doerlist.com/user/sign_up">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://app.doerlist.com/user/sign_in">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <h3> <span class="small">★</span> Crafted from a minimal design </h3>
-    <p>
-        <li>Clean and simple design makes usage of doerlist happy</li>
-    </p>
+    <!-- Page Content -->
+    <div class="container">
 
-    <h3> <span class="small">★</span> Swipe to complete, swipe to archive</h3>
-    <p>
-        <li>Simple gesture to control the status of your task</li>
-    </p>
+        <!-- Introduction Row -->
+        <h1 class="my-4">
+            Doerlist - <small>We simplify organising your tasks, lists & work.</small></h1>
+        <p>Welcome! Doerlist is a simple and fast todo list for busy people.</p>
 
-    <h3> <span class="small">★</span> iPhone & Android </h3>
-    <p>
-        <li>Work great on iPhone or Android. Built with Framework 7 and Ruby on Rails. </li>
-    </p>
+        <!-- Team Members Row -->
+        <div class="row">
 
-    <h3><span class="small">★</span> Organize into simple task list </h3>
-    <p>
-        <li>Doerlist supports task list. You can add up to one level of additional tasks. </li>
-    </p>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <i class="fa fa-5x fa-fighter-jet "></i>                
+                <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
+                <h3>Simple & Fast</h3>
+                <p>Certain random text that are related to Simple & Fast Certain random text that are related to Simple & Fast Certain random text that are related to Simple & Fast</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <i class="fa fa-5x fa-shield"></i>                
+                <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
+                <h3>Secure & Private</h3>
+                <p>Certain random text that are related to Secure & Private Certain random text that are related to Secure & Private Certain random text that are related to Secure & Private</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <i class="fa fa-5x fa-check-circle"></i>
+                <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
+                <h3>More work, Affordable price
+                </h3>
+                <p>Certain random text that are related to more work & affordable app Certain random text that are related to more work & affordable app Certain random text that are related to more work & affordable app</p>
+            </div>
 
-    <h3> <span class="small">★</span> Add a due date </h3>
-    <p>
-        <li>Set due date for each task. Never miss the deadline again. </li>
-    </p>
+            
+        </div>
 
-    <h3> <span class="small">★</span> Set list, private by default. Generate a public link. </h3>
-    <p>
-        <li>All tasks and lists are private by default. Generate a public link to share with co-workers or family.</li>
-    </p>
+    </div>
+    <!-- /.container -->
 
-    <h3> <span class="small">★</span> Add members to the list. </h3>
-    <p>
-        <li>Add members to the list. Members can get updated when there are new changes.</li>
-    </p>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Doerlist 2010 - 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
-    <h3><span class="small">★</span> Group tasks with projects name</h3>
+    <!-- Bootstrap core JavaScript -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/popper/popper.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <p>Each task can be filed under a project. You can create a project or you can simply create tasks. </p>
-
-    <h3><span class="small">★</span> Respect your data privacy. Privacy is treated seriously at doerlist.</h3>
-
-    <p>
-        <li>Doerlist does not use any 3rd party trackers. </li>
-        <li>Doerlist does not collect or track any of your information. </li>
-        <li>Doerlist respects your data privacy and if you find any leak or privacy concerns, feel free to email me at support@doerlist.com</li>
-    </p>
-
-    <h3><span class="small">★</span> Support an affordable business model </h3>
-
-    <p>
-        <li>At an affordable $1 per month, you get unlimited access to your data and your app. For $1, your life gets organised beautifully & your productivity restored. </li>
-        <li>For $20 per year, you can also access your archived data forever.  </li>
-        <li>Your data and your privacy are respected. </li>
-    </p>
-
-    <p>
-        Not convinced? Give it a try and there is a 3-day money back guarantee. 
-    </p>
-
-    Question? Feedback? Support? Email at <a href="mailto:support@doerlist.com">support@doerlist.com</a> >| <a href="contact.html">Contact</a> | <a href="faq.html">FAQ</a> | Read it in <a href="#">deutsche</a>, <a href="#">русский</a>, <a href="#">français</a>, <a href="#">华文</a>, <a href="#">日本語</a> | 
-  </body>
+</body>
 
 </html>
