@@ -16,6 +16,14 @@
     <link href="css/round-about.css" rel="stylesheet">
 
     <style>
+        .underline {
+            text-decoration: underline;
+        }
+
+        a.promo {
+            color: rgb(201, 77, 72) !important;    
+        }
+        
         html {
             position: relative;
             min-height: 100%;
@@ -25,11 +33,11 @@
             margin: 0 0 100px; /* bottom = footer height */
             padding: 15px;
             padding-top: 80px;            
-            color: rgb(201, 77, 72);                        
+            color: #344146;    
         }
         
         footer {
-            background-color: orange;
+            background-color: #34495E;    
             position: absolute;
             left: 0;
             bottom: 0;
@@ -45,6 +53,29 @@
         .bg-dark {
             background-color: rgb(201, 77, 72) !important;    
         }
+
+        .red {
+            color: rgb(201, 77, 72) !important;    
+        }
+
+        .green {
+            color: #27AE60;
+        }
+
+        highlight {
+            background: #E67E22;
+            
+        }
+
+
+        .orange {
+            color: #E67E22;
+        }
+
+        .blue {
+            color: #2980B9;
+        }
+
     </style>
 </head>
 
@@ -60,15 +91,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="https://app.doerlist.com/users/sign_up">Sign Up</a>
-                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="https://app.doerlist.com/users/sign_in">Sign In</a>
+                    <a class="nav-link" href="https://app.doerlist.com/users/sign_in">Demo <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://app.doerlist.com/users/sign_in">Demo <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://app.doerlist.com/users/sign_up">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -76,40 +106,52 @@
 
     <!-- Page Content -->
     <div class="container">
+        <div>
+                    <!-- Introduction Row -->
+             <h1 class="my-4 text-center">
+                Doerlist <small>is a simple way to organise your tasks, lists & work.</small></h1>
+    
+            <p class="text-center">Welcome! Doerlist is a simple and fast todo list for busy people. 
+                <a href="feature">Take a full feature tour.</a>
+            </p>
 
-        <!-- Introduction Row -->
-        <h1 class="my-4 text-center">
-            Doerlist <small>is a simple way to organise your tasks, lists & work.</small></h1>
+        </div>
+    
 
-        <p class="text-center">Welcome! Doerlist is a simple and fast todo list for busy people. 
-            <a href="feature">Take a full feature tour.</a>
-        </p>
+        <hr>
 
         <!-- Team Members Row -->
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <i class="fa fa-5x fa-fighter-jet "></i>                
+                <i class="blue fa fa-5x fa-fighter-jet "></i>                
                 <h3>Simple & fast</h3>
-                <p>Certain random text that are related to random text that are related to random text that are related to random text that are related to random text that are related to random text that are related to.</p>
+                <p>Certain random text that are related to random text that are related to random text that
+                     are related to random text that are related to random text that are related to 
+                     random text that are related to. <a href="">Find out more</a></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <i class="fa fa-5x fa-shield"></i>                
+                <i class="red fa fa-5x fa-shield"></i>                
                 <h3>Secure & private</h3>
-                <p>Certain random text that are related to random text that are related to random text that are related to random text that are related to random text that are related to random text that are related to.</p>
-            </div>
+                <p>Certain random text that are related to random text that are related to random text that
+                        are related to random text that are related to random text that are related to 
+                        random text that are related to. <a href="">Find out more</a></p>
+               </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <i class="fa fa-5x fa-check-circle"></i>
+                <i class="green fa fa-5x fa-check-circle"></i>
                 <h3>Better work & more time
                 </h3>
-                <p>Certain random text that are related to random text that are related to random text that are related to random text that are related to random text that are related to random text that are related to.</p>
-            </div>            
+                <p>Certain random text that are related to random text that are related to random text that
+                        are related to random text that are related to random text that are related to 
+                        random text that are related to. <a href="">Find out more</a></p>
+               </div>          
         </div>
-
+        <hr>
+        
         <br><br>
-
-        <p>
-            Not convinced? The best way to find out is to try it out yourself. Doerlist has a three-day money back guarantee. 
-            Don't stop here. <a href="">Check out 20 more features in the features tour.</a>
+        
+        <p class="text-center">
+            Not convinced? Doerlist has a three-day full-refund. <mark> The best way to find out is to try it out yourself. </mark> <a class="underline" href="#"> Sign up </a>
+            <br>  Be sure to <a href="">check out twenty more features in doerlist's features tour.</a>
         </p>
 
         <br><br>
@@ -119,9 +161,15 @@
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5">
         <div class="container">
+
+            <!-- <p class="m-0 text-center text-white">Need help or have questions? Email support@doerlist.com</p> -->
+                
             <p class="m-0 text-center text-white">Copyright &copy; Doerlist 2010 - 2017</p>
+
+            <!-- <p class="m-0 text-center text-white">Demo</p> -->
+            
         </div>
     </footer>
 
