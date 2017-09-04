@@ -21,29 +21,30 @@
         }
 
         a.promo {
-            color: rgb(201, 77, 72) !important;    
+            color: rgb(201, 77, 72) !important;
         }
-        
+
         html {
             position: relative;
             min-height: 100%;
         }
-        
+
         body {
-            margin: 0 0 100px; /* bottom = footer height */
+            margin: 0 0 100px;
+            /* bottom = footer height */
             padding: 15px;
-            padding-top: 80px;            
-            color: #344146;    
+            padding-top: 80px;
+            color: #344146;
         }
-        
+
         footer {
-            background-color: #34495E;    
+            background-color: #34495E;
             position: absolute;
             left: 0;
             bottom: 0;
             height: 100px;
             width: 100%;
-            overflow:hidden;
+            overflow: hidden;
         }
 
         .text-center {
@@ -51,11 +52,11 @@
         }
 
         .bg-dark {
-            background-color: rgb(201, 77, 72) !important;    
+            background-color: rgb(201, 77, 72) !important;
         }
 
         .red {
-            color: rgb(201, 77, 72) !important;    
+            color: rgb(201, 77, 72) !important;
         }
 
         .green {
@@ -79,6 +80,18 @@
             font-size: 23px;
         }
 
+        .small_square {
+            width: 70px;
+            height: 70px;  
+            background: black;
+        }
+
+        .big_square {
+            width: 200px;
+            height: 100px;    
+            background: red;
+            
+        }
     </style>
 </head>
 
@@ -89,13 +102,14 @@
         <a class="navbar-brand" href="/">
             <img src="app/img/icon.png" width="40" height="40" alt="" style="border-radius: 5px;">                
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
 
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="https://app.doerlist.com/users/sign_in">Demo <span class="sr-only">(current)</span></a>
                 </li>
@@ -111,40 +125,42 @@
         <div>
             <div class="row">
                 <div class="col-lg-5  my-4 col-sm-4">
+                    <div class="big_square"></div>
+                    <div class="small_square"></div>
                     
                 </div>
 
 
                 <div class="col-lg-5 col-sm-4 text-center">
                     <h2 class="my-4 text-center">
-                            Doerlist <small>is a simple way to organize your tasks, lists & work.</small></h2>
-                
-                        <p class="text-center">Welcome! Doerlist is a simple and fast todo list for busy people. 
-                            <a href="tour.html">Take a full feature tour </a> to see how doerlist can help.
-                        </p>
+                        Doerlist <small>is a simple way to organize your tasks, lists & work.</small></h2>
+
+                    <p class="text-center">Welcome! Doerlist is a simple and fast todo list for busy people.
+                        <a href="tour.html">Take a full feature tour </a> to see how doerlist can help.
+                    </p>
                 </div>
-                
+
 
                 <div class="col-lg-2 my-4 col-sm-4">
                     <form>
                         Email:<br>
-                        <input type="text" name="firstname"><br>
-                        Password:<br>
+                        <input type="text" name="firstname"><br> Password:
+                        <br>
                         <input type="password" name="lastname">
 
                         <button class="btn btn-sm btn-outline-dark">log in</button>
-                        
+
                     </form>
 
                     <hr>
 
                     <button class="btn btn-outline-success">Sign up for $11/year</button>
-                    
+
                 </div>
             </div>
 
         </div>
-    
+        <br>
         <hr>
         <!-- <div class="row text-center">
             <div class="col-lg-4 col-sm-6 text-center mb-4">
@@ -160,44 +176,43 @@
             </div>
         </div> -->
         <br>
-        
+
         <div class="row">
-            
+
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <i class="blue fa fa-5x fa-fighter-jet "></i>                
+                <i class="blue fa fa-5x fa-fighter-jet "></i>
                 <h3>Simple & fast</h3>
-                <p>Certain random text that are related to random text that are related to random text that
-                     are related to random text that are related to random text that are related to 
-                     random text that are related to.</p>
+                <p>Certain random text that are related to random text that are related to random text that are related to random
+                    text that are related to random text that are related to random text that are related to.</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <i class="red fa fa-5x fa-shield"></i>                
+                <i class="red fa fa-5x fa-shield"></i>
                 <h3>Secure & private</h3>
-                <p>Certain random text that are related to random text that are related to random text that
-                        are related to random text that are related to random text that are related to 
-                        random text that are related to.</p>
-               </div>
+                <p>Certain random text that are related to random text that are related to random text that are related to random
+                    text that are related to random text that are related to random text that are related to.</p>
+            </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
                 <i class="green fa fa-5x fa-check-circle"></i>
                 <h3>Better work & more time
                 </h3>
-                <p>Certain random text that are related to random text that are related to random text that
-                        are related to random text that are related to random text that are related to 
-                        random text that are related to.</p>
-               </div>          
+                <p>Certain random text that are related to random text that are related to random text that are related to random
+                    text that are related to random text that are related to random text that are related to.</p>
+            </div>
         </div>
-        
+
         <p class="text-center">
-            Not convinced? <mark> The best way to find out is to try it out yourself.</mark> 
-            <a class="underline" href="#"> Sign up </a> (The money is fully refundable in three days.)  
-            <br>  Be sure to <a href="">check out sixteen features of Doerlist.</a>
+            Not convinced?
+            <mark> The best way to find out is to try it out yourself.</mark>
+            <a class="underline" href="#"> Sign up </a> (The money is fully refundable in three days.)
+            <br> Be sure to <a href="">check out sixteen features of Doerlist.</a>
         </p>
-        <br>        
+        <br>
         <hr>
-        
+
         <br><br>
         <p class="text-center">
-            If you are a writer, designer or programmer, we need your help at the beta program! Join doerlist's beta program by sending an email to <a href="mailto:">beta@doerlist.com</a> 
+            If you are a writer, designer or programmer, we need your help at the beta program! Join doerlist's beta program by sending
+            an email to <a href="mailto:">beta@doerlist.com</a>
             <a>Read: What is a beta program?</a>
         </p>
 
@@ -206,7 +221,7 @@
             <h3 class="text-center">Would like to hear from you!</h3>
             <p class="text-center">Advice for doerlist? Question or problem? contact support@doerlist.com</p>
         </p>
-        
+
     </div>
     <!-- /.container -->
 
@@ -215,11 +230,11 @@
         <div class="container">
 
             <!-- <p class="m-0 text-center text-white">Need help or have questions? Contact support@doerlist.com</p> -->
-                
+
             <p class="m-0 text-center text-white">Copyright &copy; Doerlist 2017</p>
 
             <!-- <p class="m-0 text-center text-white">Demo</p> -->
-            
+
         </div>
     </footer>
 
