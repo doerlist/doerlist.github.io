@@ -1,3 +1,8 @@
+
+.text-left{
+  text-align: left;
+}
+
 .center {
   margin: 0 auto;
 }
