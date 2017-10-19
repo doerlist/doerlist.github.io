@@ -52,7 +52,22 @@ footer {
 
 .bg-dark {
   background-color: rgb(201, 77, 72) !important;    
+  /* background-color: transparent !important; */
+  /* color:black; */
 }
+
+/* a.nav-link {
+  color:black !important;
+}
+
+span.navbar-toggler-icon {
+  color:black !important;
+  
+}
+.navbar-dark .navbar-toggler {
+  color:black !important;
+  border-color:black !important;
+} */
 
 .red {
   color: rgb(201, 77, 72);    
@@ -114,9 +129,6 @@ footer {
   text-align: center;
 }
 
-.bg-dark {
-  background-color: rgb(201, 77, 72) !important;
-}
 
 .red {
   color: rgb(201, 77, 72);
